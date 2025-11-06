@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Peluquería M</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MaterializeCSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 
+
+
+  <style>
+
+    /*ESTILO DE LA LETRA*/
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+
+   
+    /*COLOR DEL NAVEGADOR*/
+    nav {
+    background: linear-gradient(90deg, #000000, #4c4c4d);
+    height: 11vh;
+
+     position: fixed;       /* posición fijo*/ 
+      padding: 10px 0;       /* posicion de la letras*/ 
+      z-index: 1000;         /*visible el nav*/
+      
+    }
+    
+   
+   
+
+    /* Ajuste adicional para el navegador del RESPONSIVE CELULAR */
+
+     .sidenav {
+        top: 11vh !important;
+        z-index: 999;
+    }
+    nav {
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+
+    @media (max-width: 992px) {
+      
+        
+        .sidenav {
+            top: 100 !important; /* En móvil, el sidenav empieza desde arriba */
+        }
+    }
+    
+
+ /*FUENTE DE LA LETRA DEL LOGO*/
+    .brand-logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      margin-left: 10px;
+    }
+
+   
+
+    /* HERO LA PRIMERA IMAGEN QUE APARECE */
+    .hero {
+      background: url('ca3.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+      position: relative;
+      
+    }
+    
+    /*TONO MAS APAGADO DEL HERO*/
+    
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+}
+
+      /*EL CONTENIDO DEL HERO*/
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /*LA FUENTE DEL HERO*/
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+    }
+
+     /*MAS ESPACIO DEL HERO*/
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+     /*COLOR DEL BOTON DEL HERO*/
+    .btn-custom {
+      background: linear-gradient(90deg, #000000, #4c4c4d);
+      color: #fff1f1;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      transform: scale(1.05);
+    }
+
+    /* CARRUSEL */
+
+    /*POSICIÓN DEL CARRUSEL*/
+    .carousel {
+      height: 600px !important;
+      margin-top: 10%;
+    }
+    
+    /*LAS POSICIÓN DE LAS IMAGENES DEL CARRUSEL*/
+    .carousel .carousel-item img {
+      width: 50%;
+      height: 90%;
+      object-fit: cover;
+      border-radius: 50px;
+      filter: brightness(0.9);
+    }
+
+    /* FLECHAS */
+
+    /*POSICION DE LAS FLECHAS DEL CARRUSEL*/
+    .carousel-flechas {
+      position: relative;
+      top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      z-index: 10;
+    }
+    /*COLOR DEL FLECHAS*/
+    .btn-floating {
+      background: #212121;
+    }
+
+    /*SOMBRA DE LAS FLECHAS*/
+    .btn-floating:hover {
+      background: linear-gradient(90deg, #000000, #4c4c4d);
+    }
+
+    /* SERVICIOS */
+    .section.white {
+      background: #fff;
+      padding: 50px 20px;
+    }
+
+    /*NEGRITA DEL SERVICIO*/
+    .section.white h2 {
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #212121;
+    }
+
+    /*TAMAÑO DE LA TABLA DE SERVICIO*/
+    .collection-item {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    /* FORMULARIO */
+
+    /*ESPACIO DEL RESERVAS*/
+    .section.grey.lighten-3 {
+      padding: 50px 20px;
+    }
+    /*SOMBRA DEL BOTÓN RESERVAS*/
+    .btn.black {
+      background: linear-gradient(90deg, #000000, #4c4c4d);
+      font-weight: bold;
+    }
+
+        /* Footer */
+    footer {
+   background: linear-gradient(90deg, #000000, #4c4c4d);
+      color: #ffffff;
+      padding: 30px 0;
+      text-align: center;
+    }
+    footer a {
+      color: #ffffff;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* 📱 RESPONSIVE */
+    @media (max-width: 992px) {
+      .brand-logo {
+        font-size: 1.8rem;
+      }
+
+      .hero {
+        height: 60vh;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .carousel .carousel-item img {
+        width: 90%;
+        border-radius: 20px;
+      }
+
+      footer {
+        font-size: 0.9rem;
+        padding: 10px 0;
+      }
+
+      .section.white h2, .section.grey.lighten-3 h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        height: 50vh;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 0.9rem;
+      }
+      .collection-item {
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- NAVEGADOR -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Peluquería M</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="ubicacion2.html">Ubicación</a></li>
+        <li><a href="login.php">Administrador</a></li>
+      
+      </ul>
+    </div>
+  </nav>
+<!--NAVBAR-->
+ 
+  <!-- CONTENIDO -->
+  <div class="content">
+
+
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Peluquería M</h1>
+        <p>Estilo y belleza para cada momento especial</p>
+        <a class="btn btn-custom waves-effect waves-light" href="servicios.html">
+          <i class="material-icons left">event</i>Servicios
+        </a>
+      </div>
+    </div>
+    <!--HERO-->
+
+
+
+     <!-- MENÚ LATERAL (para celular) -->
+
+     
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="ubicacion2.html">Ubicación</a></li>
+    <li><a href="login.php">Administrador</a></li>
+  </ul>
+  <!--MENÚ LATERAL (para celular)-->
+
+
+
+
+
+    <!-- CARRUSEL -->
+    <div class="carousel carousel-slider center">
+      <div class="carousel-item" href="#uno!">
+        <img src="carrusel1.jpg" alt="Corte">
+     
+     
+      </div>
+      <div class="carousel-item" href="#dos!">
+        <img src="carrusel2.jpg" alt="Coloración">
+
+      </div>
+      <div class="carousel-item" href="#tres!">
+        <img src="carrusel5.jpg" alt="Peinados">
+       
+      </div>
+    </div>
+
+    <div class="carousel-flechas">
+      <a id="prev" class="btn-floating btn-small"><i class="material-icons">chevron_left</i></a>
+      <a id="next" class="btn-floating btn-small"><i class="material-icons">chevron_right</i></a>
+    </div>
+    <!--CARRUSEL-->
+
+
+
+    <!-- SERVICIOS -->
+    <div class="section white">
+      <h2>SERVICIOS QUE OFRECEMOS</h2>
+      <div class="container">
+        <ul class="collection">
+          <li class="collection-item">✂️ CORTES</li>
+          <li class="collection-item">🎨 COLORACIÓN TRADICIONAL Y FANTASÍA</li>
+          <li class="collection-item">💆‍♀️ NUTRICIÓN</li>
+          <li class="collection-item">💎 BOTOX CAPILAR</li>
+          <li class="collection-item">🔥 ALISADO</li>
+        </ul>
+      </div>
+    </div>
+    <!--SERVICIOS-->
+
+
+
+    <!-- FORMULARIO -->
+    <div class="section grey lighten-3">
+      <h2>Reservá tu turno</h2>
+      <div class="container center">
+        <a class="waves-effect waves-light btn black" href="formulario.php">
+          <i class="material-icons left">event</i>Ir al formulario
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--FORMULARIO-->
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container center-align">
+      <h5>Síguenos en redes</h5>
+      <div>
+        <a href="https://wa.me/5493885141108" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://facebook.com/luistorres" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/httpnestor05l.o" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div>© 2025 Mi Peluquería</div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems);
+
+      var elem = document.querySelector('.carousel.carousel-slider');
+      var instance = M.Carousel.init(elem, { fullWidth: true, indicators: true });
+
+      setInterval(() => instance.next(), 5000);
+
+      document.getElementById('next').addEventListener('click', () => instance.next());
+      document.getElementById('prev').addEventListener('click', () => instance.prev());
+    });
+  </script>
+
+</body>
+</html>
